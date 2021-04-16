@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <!-- VUE -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <!-- AXIOS -->
+  <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- MY JS -->
+  <script src="js/script.js"></script>
+  <title>Esercizi 16 aprile 2021</title>
+
+  <body>
+
+    <div class="contenitoreGrande" id="vueDanny">
+
+      <div class="contenitore">  <!-- INIZIO DEL CONTENITORE -->
+
+        <div v-for="album in collection" class="scatola">
+          <span></span>
+          <div v-if="select == album.genre || select == 'All' " class="contenuto">
+            <h2>{{ album.author }}</h2>
+            <p>{{ album.genre }}</p>
+            <img :src="album.poster">
+          </div>
+        </div>
+
+        <span>Keep the click button pressed to enlarge the card &#160;<i class="fas fa-music"></i></span>
+      </div>  <!-- FINE DEL CONTENITORE -->
+
+
+      <div> <!-- SELECT SECTION -->
+        <select v-model="select">
+          <option value="All">All</option>
+          <option value="Jazz">Jazz</option>
+          <option value="Metal">Metal</option>
+          <option value="Pop">Pop</option>
+          <option value="Rock">Rock</option>
+        </select>
+      </div>
+
+    </div><!-- END OF DANNY VUE -->
+
+  </body>
+</html>
