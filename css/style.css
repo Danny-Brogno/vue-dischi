@@ -142,6 +142,7 @@ li {
   width: 136px;
   height: 200px;
   padding-bottom: 20px;
+  cursor: pointer;
 }
 
 /* --------------------SELECT SECTION----------------------------------- */
